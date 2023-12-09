@@ -1,0 +1,25 @@
+.sec {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 24px;
+  margin-top: 41px;
+
+  border: 2px solid gray;
+}
+
+.fav {
+  margin-right: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 30px;
+  border: none;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 5px;
+}

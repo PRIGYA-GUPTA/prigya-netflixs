@@ -1,0 +1,18 @@
+.footer {
+  background-color: #000;
+  color: #ffffffd9;
+  height: 28rem;
+}
+
+.container {
+  padding-top: 6rem;
+}
+.eng-wrapper {
+  display: flex;
+}
+
+/* Footer.css */
+
+.eng-wrapper .sec {
+  margin-top: 0px;
+}

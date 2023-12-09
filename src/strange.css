@@ -1,0 +1,38 @@
+.StrangeCon {
+  display: flex;
+  border-radius: 7px;
+  border: solid rgb(117, 109, 109) 2px;
+  width: 45%;
+  height: 6.5rem;
+  background-color: #000;
+  color: #fff;
+  margin-left: 236px;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-10%);
+}
+
+.strimg {
+  height: 5rem;
+  margin-top: 0.6rem;
+  margin-left: 0.7rem;
+}
+
+.headdiv {
+  margin-left: 1.3rem;
+  margin-top: 1rem;
+  width: 10rem;
+}
+
+.strpara {
+  font-weight: 500;
+  margin-top: 0.8rem;
+  margin-bottom: 0px;
+}
+
+.loading {
+  width: 60%;
+  margin-top: 1.5rem;
+  margin-left: 0.7rem;
+  margin-right: 0px;
+}

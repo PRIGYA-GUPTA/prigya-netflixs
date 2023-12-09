@@ -1,0 +1,29 @@
+.second {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  height: 38rem;
+}
+
+.secImg {
+  margin-left: 6rem;
+  margin-top: 40px;
+  width: 37rem;
+}
+
+.heading {
+  font-size: 3.1rem;
+  font-weight: 900;
+  margin-top: 0;
+}
+
+.secondPara {
+  font-size: 1.4rem;
+  font-weight: 500;
+  width: 70%;
+}
+
+.secHeadCon {
+  margin-top: 10rem;
+  width: 50%;
+}

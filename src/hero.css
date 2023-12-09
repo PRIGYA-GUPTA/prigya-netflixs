@@ -1,0 +1,17 @@
+.herohead {
+  color: #ffffff;
+  margin-top: 170px;
+  /* font-family: 'Roboto',sans-serif; */
+}
+
+.herohead > h1 {
+  font-size: 3.1rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.herohead > p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+}
