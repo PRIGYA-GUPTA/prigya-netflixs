@@ -1,47 +1,17 @@
-import "./signin.css";
+import styles from "./signup.module.css";
 import logo from "./netflixlogo.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
-import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "./firebase";
-import React, { useContext } from "react";
-import { AuthContext } from "./AuthContext";
 import Eng from "./Eng";
-import { useState, useEffect } from "react";
-function SignIn() {
-  const location = useLocation();
-  const { setIsAuthenticated } = useContext(AuthContext);
-  const email = location.state?.email || "";
-  console.log(`Received email: ${email}`);
+import { useState } from "react";
+
+function SignUp() {
   const navigate = useNavigate();
-  const [values, setValues] = useState({ email: email, password: "" });
+  const [values, setValues] = useState({ name: "", email: "", password: "" });
   const [errorMsg, setErrorMsg] = useState("");
   const [submitdisable, setSubmitdisable] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflowX = "hidden";
-  }, []);
-
-  const handleSubmit = () => {
-    console.log(values.email);
-    setSubmitdisable(true);
-    signInWithEmailAndPassword(auth, values.email, values.password)
-      .then(async (res) => {
-        setSubmitdisable(false);
-        setIsAuthenticated(true);
-        navigate("/dashboard");
-      })
-      .catch((err) => {
-        setSubmitdisable(false);
-        setErrorMsg(err.message);
-      });
-  };
-
   const Items = [
     "FAQ",
     "Help Centre",
@@ -50,54 +20,87 @@ function SignIn() {
     "Cookie Preferences",
     "Corporate Information",
   ];
+  const handleSubmission = () => {
+    setSubmitdisable(true);
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then(async (res) => {
+        setSubmitdisable(false);
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+        navigate("/signin");
+      })
+      .catch((err) => {
+        console.log(err);
+        setSubmitdisable(false);
+        setErrorMsg(err.message);
+      });
+  };
   return (
-    <Container fluid className="p-0 maindivsign">
+    <div className="maindivsign">
       <div className="sign">
         <div>
           <img src={logo} style={{ width: "200px" }}></img>
         </div>
         <div className="signincon">
           <div className="signdiv">
-            <h1>Sign In</h1>
+            <h1>Sign Up</h1>
+            <label>Name</label>
+            <input
+              type="name"
+              className="email1"
+              placeholder="Enter your name"
+              onChange={(e) =>
+                setValues((prev) => ({ ...prev, name: e.target.value }))
+              }
+            ></input>
+            <label>Email</label>
             <input
               type="email"
-              className="email1"
               placeholder="Enter email address"
-              value={values.email}
+              className="email1"
               onChange={(e) =>
                 setValues((prev) => ({ ...prev, email: e.target.value }))
               }
             ></input>
+
+            <label>Password</label>
             <input
               type="password"
-              className="email1"
               placeholder="Enter password"
+              className="email1"
               onChange={(e) =>
                 setValues((prev) => ({ ...prev, password: e.target.value }))
               }
             ></input>
             {/* <div
-              className="divsign1"
-              onClick={handleSubmit}
-              disable={submitdisable}
-            >
-              <Link
-                to="/dashboard"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <span className="signin1">Sign In</span>
-              </Link>
-            </div> */}
+                  className="divsign1"
+                  onClick={handleSubmit}
+                  disable={submitdisable}
+                >
+                  <Link
+                    to="/dashboard"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <span className="signin1">Sign In</span>
+                  </Link>
+                </div> */}
             <b className="error">{errorMsg}</b>
             <button
               className="signbutton"
-              onClick={handleSubmit}
+              onClick={handleSubmission}
               disabled={submitdisable}
             >
-              Signin
+              Signup
             </button>
-
-            <div className="checkdiv">
+            <p style={{ color: "#fff", marginTop: "10px" }}>
+              Already have an account
+              <Link to="/signin" style={{ color: "#fff" }}>
+                Sign in now
+              </Link>
+            </p>
+            {/* <div className="checkdiv">
               <div className="checkRem">
                 <div>
                   <input type="checkbox"></input>
@@ -109,11 +112,7 @@ function SignIn() {
               </div>
               <div className="netdiv">
                 <p>New to Netflix? </p>
-                <p style={{ color: "#fff" }}>
-                  <Link to="/signup" style={{ color: "#fff" }}>
-                    Sign up now
-                  </Link>
-                </p>
+                <p style={{ color: "#fff" }}> Sign up now.</p>
               </div>
               <div className="Spandiv">
                 <span>
@@ -122,7 +121,7 @@ function SignIn() {
                 </span>
                 <a href="#"> Learn more.</a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -142,8 +141,8 @@ function SignIn() {
           <p style={{ paddingTop: "1.5rem" }}>Netflix India</p>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
 
-export default SignIn;
+export default SignUp;

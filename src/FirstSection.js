@@ -1,8 +1,7 @@
 import React from "react";
 import "./first.css";
-import video1 from "./net.m4v";
 
-export default function FirstSection({ head, para, img }) {
+export default function FirstSection({ head, para, img, children }) {
   return (
     <div className="firstSection">
       <div className="first">
@@ -13,12 +12,7 @@ export default function FirstSection({ head, para, img }) {
 
         <div className="tv">
           <img className="tv" src={img}></img>
-          <video
-            className="tv_video"
-            src={video1}
-            controls="controls"
-            autoPlay="true"
-          ></video>
+          {children}
         </div>
       </div>
     </div>

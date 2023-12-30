@@ -19,11 +19,20 @@
 
 .tv_video {
   position: absolute;
-  margin-top: 49px;
-  margin-left: 190px;
+  margin-top: 90px;
+  margin-left: 238px;
   top: 0;
   left: 0;
   width: 48%;
+}
+
+.tv_video2 {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 263px;
+  top: 0;
+  left: 0;
+  width: 40%;
 }
 
 .firstHead {
