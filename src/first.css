@@ -157,3 +157,9 @@
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 432px) {
+  .tv_video {
+    margin-top: 7rem;
+  }
+}
