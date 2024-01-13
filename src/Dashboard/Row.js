@@ -17,6 +17,19 @@ function Row({ title, fetchUrl, isLargeRow, list, setList }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showError, setShowError] = useState(false);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const opts = {
     top: 0,
     left: 0,
@@ -24,6 +37,7 @@ function Row({ title, fetchUrl, isLargeRow, list, setList }) {
     playerVars: {
       autoplay: 1,
     },
+    width: windowWidth < 600 ? 340 : 640,
   };
 
   useEffect(() => {
@@ -141,8 +155,9 @@ function Row({ title, fetchUrl, isLargeRow, list, setList }) {
             </p>
 
             <FontAwesomeIcon
+              className="fontIcon"
               onClick={handleClose}
-              style={{ position: "absolute", top: 260, right: 540 }}
+              style={{ position: "absolute" }}
               icon={faTimes}
               size="2x"
             />
