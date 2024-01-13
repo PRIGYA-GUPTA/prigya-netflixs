@@ -1,4 +1,3 @@
-import styles from "./signup.module.css";
 import logo from "./netflixlogo.png";
 import { Link, useNavigate } from "react-router-dom";
 

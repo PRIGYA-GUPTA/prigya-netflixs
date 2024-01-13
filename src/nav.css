@@ -105,7 +105,7 @@
 
 @media only screen and (max-width: 1024px) {
   .header {
-    margin: 0 40px; /* Adjusted margin for smaller screens */
+    margin: 0 7px; /* Adjusted margin for smaller screens */
   }
 
   .logo {

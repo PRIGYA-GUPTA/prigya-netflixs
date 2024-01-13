@@ -47,7 +47,7 @@
 .email1 {
   background: transparent;
   line-height: 16px;
-  width: 326px;
+  width: 19rem;
   height: 56px;
   font-size: 16px;
   color: #ffffff;
@@ -83,7 +83,7 @@
   color: white;
   text-align: center;
   padding: 10px;
-  width: 328px;
+  width: 19rem;
   margin-top: 20px;
   font-weight: bold;
   font-size: 1rem;
@@ -150,5 +150,15 @@
   /* CSS rules for extra small devices */
   .signincon {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 432px) {
+  .email1 {
+    width: 17rem;
+  }
+
+  .signbutton {
+    width: 17rem;
   }
 }
