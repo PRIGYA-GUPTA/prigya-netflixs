@@ -102,9 +102,28 @@
 }
 
 /* Responsive CSS */
+
 @media only screen and (max-width: 1024px) {
+  .header {
+    margin: 0 40px; /* Adjusted margin for smaller screens */
+  }
+
   .logo {
     width: 140px;
     margin-top: 25px;
   }
+
+  .divsign {
+    margin-top: 3rem;
+    line-height: 12px;
+    width: 3.9rem;
+
+    height: 40px;
+  }
 }
+/* @media only screen and (max-width: 1024px) {
+  .logo {
+    width: 140px;
+    margin-top: 25px;
+  }
+} */

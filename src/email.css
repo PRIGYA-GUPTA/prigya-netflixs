@@ -38,3 +38,47 @@
   font-weight: 700;
   border-color: #df2e37;
 }
+
+@media screen and (max-width: 1349px) {
+  .herofooter {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .email {
+    width: 100%;
+    max-width: 376px;
+    margin-bottom: 15px;
+  }
+
+  .herostart {
+    width: 100%;
+    max-width: 180px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .herofooter {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .email {
+    width: 100%;
+    max-width: 376px;
+    margin-bottom: 15px;
+  }
+
+  .herostart {
+    width: 100%;
+    max-width: 180px;
+    margin-left: 0;
+  }
+}

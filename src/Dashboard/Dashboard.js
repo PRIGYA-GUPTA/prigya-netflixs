@@ -7,6 +7,7 @@ import { ref, set } from "firebase/database";
 import { db } from "../firebase";
 import { auth } from "../firebase";
 import { onValue } from "firebase/database";
+import Footer from "../Footer";
 function Dashboard() {
   const [trailerUrl, setTrailerUrl] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -99,6 +100,7 @@ function Dashboard() {
         list={list}
         setList={setList}
       />
+      <Footer />
     </div>
   );
 }

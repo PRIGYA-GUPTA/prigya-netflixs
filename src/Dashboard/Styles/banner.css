@@ -2,6 +2,7 @@
   color: rgb(255, 255, 255);
   object-fit: contain;
   height: 620px;
+  background-size: cover;
 }
 
 .banner::before {
@@ -71,4 +72,21 @@
     rgba(37, 37, 37, 0.61),
     #111
   );
+}
+.fontIcon {
+  top: 35%;
+  right: 35%;
+}
+
+@media only screen and (max-width: 600px) {
+  /* CSS rules for extra small devices */
+
+  .banner_description {
+    width: 20rem;
+  }
+
+  .fontIcon {
+    top: 40%;
+    right: 17%;
+  }
 }

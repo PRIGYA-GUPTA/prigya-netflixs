@@ -129,7 +129,7 @@ function SignIn() {
       <div className="footer1">
         <div className="container1">
           <p>Questions? Call 000-800-919-1694</p>
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div className="row row-cols-2 row-cols-sm-2 row-cols-md-4">
             {Items.map((item, index) => (
               <div className="col1" key={index}>
                 <p>{item}</p>

@@ -11,16 +11,20 @@
 
 .tv {
   position: relative;
-  margin-top: 25px;
-  margin-left: 170px;
+  /* margin-top: 25px;
+  margin-left: 170px; */
+  margin-top: 4rem;
+  margin-left: 15%;
   width: 65%;
   z-index: 2;
 }
 
 .tv_video {
   position: absolute;
-  margin-top: 90px;
-  margin-left: 238px;
+  /* margin-top: 90px;
+  margin-left: 238px; */
+  margin-top: 8rem;
+  margin-left: 23%;
   top: 0;
   left: 0;
   width: 48%;
@@ -28,8 +32,8 @@
 
 .tv_video2 {
   position: absolute;
-  margin-top: 60px;
-  margin-left: 263px;
+  margin-top: 6rem;
+  margin-left: 27%;
   top: 0;
   left: 0;
   width: 40%;
@@ -45,10 +49,111 @@
   position: relative;
   top: 4rem;
   left: 10rem;
-  width: 700px;
+  width: 37rem;
 }
 
 .firstPara {
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 635px) and (max-width: 1229px) {
+  .firstSection {
+    height: 48rem;
+  }
+
+  .first {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    /* align-items: flex-start; */
+    overflow-x: hidden;
+  }
+
+  .tv {
+    margin: auto;
+    margin-left: 11%;
+    margin-top: 4rem;
+    width: 80%;
+  }
+  .tv_video {
+    margin-top: 8rem;
+
+    margin-left: 21%;
+    width: 69%;
+  }
+
+  .tv_video2 {
+    margin-top: 6rem;
+    margin-left: 27%;
+
+    width: 47%;
+  }
+
+  .firstDiv {
+    width: 70%;
+    position: relative;
+    top: 4rem;
+    left: 1rem;
+  }
+
+  .firstHead {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .firstPara {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .firstSection {
+    height: 48rem;
+  }
+
+  .first {
+    flex-direction: column; /* Change to column layout for smaller screens */
+    /* align-items: flex-start; */
+    overflow-x: hidden;
+  }
+
+  .tv {
+    margin: auto;
+    /* margin-left: 11%; */
+    margin-top: 4rem;
+    width: 98%;
+  }
+  .tv_video {
+    margin-top: 8.4rem;
+
+    margin-left: 12%;
+    width: 72%;
+  }
+
+  .tv_video2 {
+    margin-top: 6rem;
+    margin-left: 18%;
+
+    width: 60%;
+  }
+
+  .firstDiv {
+    width: 70%;
+    position: relative;
+    top: 4rem;
+    left: 1rem;
+  }
+
+  .firstHead {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .firstPara {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }

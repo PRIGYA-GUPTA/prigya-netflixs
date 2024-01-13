@@ -4,7 +4,7 @@ import "./second.css";
 function SecondSection({ img, head, para, children }) {
   return (
     <div className="second">
-      <div style={{ position: "relative" }}>
+      <div className="secCon" style={{ position: "relative" }}>
         <img className="secImg" src={img}></img>
         {children}
       </div>

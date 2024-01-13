@@ -36,3 +36,19 @@
   margin-left: 0.7rem;
   margin-right: 0px;
 }
+
+@media only screen and (min-width: 635px) and (max-width: 1229px) {
+  .StrangeCon {
+    top: 80%;
+    width: 55%;
+    margin-left: 22%;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .StrangeCon {
+    top: 80%;
+    width: 62%;
+    margin-left: 20%;
+  }
+}

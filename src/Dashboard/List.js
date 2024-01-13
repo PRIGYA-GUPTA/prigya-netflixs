@@ -1,10 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from "react";
 
 function List({ list, setShowList }) {
   const handleClose = () => {
     setShowList(false);
   };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div>
       <div
@@ -21,11 +36,13 @@ function List({ list, setShowList }) {
           zIndex: 1000,
           overflowY: "auto",
           overflowX: "hidden",
+          wordWrap: "break-word",
         }}
       >
         <div
           style={{
-            width: "50rem",
+            width: windowWidth < 600 ? "100%" : "50rem",
+            // width: "100%",
             height: "auto",
             backgroundColor: "rgba(0, 0, 0, 0.9)",
             justifyContent: "center",
@@ -37,6 +54,7 @@ function List({ list, setShowList }) {
             marginTop: "20px",
             overflowY: "auto",
             overflowX: "hidden",
+            wordWrap: "break-word",
           }}
         >
           {console.log(list)}

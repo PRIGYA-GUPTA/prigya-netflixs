@@ -33,6 +33,19 @@ function Banner({
   useEffect(() => {
     document.body.style.overflow = showList ? "hidden" : "auto";
   }, [showList]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const opts = {
     top: 0,
@@ -41,6 +54,7 @@ function Banner({
     playerVars: {
       autoplay: 1,
     },
+    width: windowWidth < 600 ? 340 : 640,
   };
 
   const handleList = () => {
@@ -90,7 +104,6 @@ function Banner({
     <header
       className="banner"
       style={{
-        backgroundSize: "cover",
         position: "relative",
 
         backgroundImage: `url(
@@ -176,8 +189,9 @@ function Banner({
             </p>
 
             <FontAwesomeIcon
+              className="fontIcon"
               onClick={handleClose}
-              style={{ position: "absolute", top: 260, right: 540 }}
+              style={{ position: "fixed" }}
               icon={faTimes}
               size="2x"
             />

@@ -23,7 +23,7 @@ function Footer() {
     <div className="footer">
       <div className="container">
         <p>Questions? Call 000-800-919-1694</p>
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div className="row row-cols-2 row-cols-sm-2 row-cols-md-4">
           {FooterItems.map((item, index) => (
             <div className="col" key={index}>
               <p>{item}</p>

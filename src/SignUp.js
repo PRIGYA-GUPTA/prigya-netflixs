@@ -47,6 +47,7 @@ function SignUp() {
           <div className="signdiv">
             <h1>Sign Up</h1>
             <label>Name</label>
+            <br></br>
             <input
               type="name"
               className="email1"
@@ -55,7 +56,9 @@ function SignUp() {
                 setValues((prev) => ({ ...prev, name: e.target.value }))
               }
             ></input>
+            <br></br>
             <label>Email</label>
+            <br></br>
             <input
               type="email"
               placeholder="Enter email address"
@@ -64,8 +67,10 @@ function SignUp() {
                 setValues((prev) => ({ ...prev, email: e.target.value }))
               }
             ></input>
+            <br></br>
 
             <label>Password</label>
+            <br></br>
             <input
               type="password"
               placeholder="Enter password"
@@ -128,7 +133,7 @@ function SignUp() {
       <div className="footer1">
         <div className="container1">
           <p>Questions? Call 000-800-919-1694</p>
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div className="row row-cols-2 row-cols-sm-2 row-cols-md-4">
             {Items.map((item, index) => (
               <div className="col1" key={index}>
                 <p>{item}</p>
