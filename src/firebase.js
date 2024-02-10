@@ -8,14 +8,14 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAWtPW7K1Hgsk44BTygmx2C4H20xEPjNEM",
-  authDomain: "netflix-prigya-project.firebaseapp.com",
-  projectId: "netflix-prigya-project",
-  storageBucket: "netflix-prigya-project.appspot.com",
-  databaseURL: "https://netflix-prigya-project-default-rtdb.firebaseio.com",
-  messagingSenderId: "491837656385",
-  appId: "1:491837656385:web:d9cc387b31ce6be6fb25c0",
-  measurementId: "G-J9R2MFXMV3",
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  databaseURL: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
 };
 
 // Initialize Firebase
